@@ -107,30 +107,3 @@ io_abusers[:4].plot.pie(autopct='%.1f', fontsize=14, figsize=(6, 6), legend=True
 
 memory_abusers[:4].plot.pie(autopct='%.1f', fontsize=14, figsize=(6, 6), legend=True)
 
-
-# In[4]:
-
-df = pd.read_csv('RhinoWeeklyUsageReport.20160531.csv')
-df
-
-
-# In[6]:
-
-dt = 20160531
-pd.to_datetime(dt,format= '%Y%m%d')
-
-
-# In[7]:
-
-df['date']=dt
-
-
-# In[8]:
-
-df
-
-
-# In[ ]:
-
-
-
