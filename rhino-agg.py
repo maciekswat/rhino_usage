@@ -12,12 +12,12 @@ import matplotlib.pyplot as plt
 from glob import glob
 
 
-# In[10]:
+# In[2]:
 
 max_abusers = 1
 
 
-# In[21]:
+# In[3]:
 
 usage_report_names = glob('RhinoWeeklyUsageReport.*.csv')
 
@@ -44,12 +44,12 @@ master_df.columns=columns
         
 
 
-# In[22]:
+# In[4]:
 
 mean_usage_df = master_df.groupby('USER').mean()
 
 
-# In[27]:
+# In[5]:
 
 cpu_abusers  = mean_usage_df['CPUTIME (s)'].sort_values( ascending=False)
 runtime_abusers = mean_usage_df['RUNTIME (s)'].sort_values(ascending=False)
@@ -57,7 +57,7 @@ memory_abusers = mean_usage_df['MEMORY (GB)'].sort_values(ascending=False)
 io_abusers = mean_usage_df['IO (GB)'].sort_values( ascending=False)
 
 
-# In[29]:
+# In[6]:
 
 runtime_abusers.index
 
@@ -72,7 +72,7 @@ runtime_abusers.index
 
 
 
-# In[40]:
+# In[7]:
 
 runtime_abusers[:4].plot.pie(autopct='%.1f', fontsize=14, figsize=(6, 6), legend=True)
 
@@ -93,17 +93,17 @@ runtime_abusers[:4].plot.pie(autopct='%.1f', fontsize=14, figsize=(6, 6), legend
 # plt.legend()
 
 
-# In[41]:
+# In[8]:
 
 cpu_abusers[:4].plot.pie(autopct='%.1f', fontsize=14, figsize=(6, 6), legend=True)
 
 
-# In[42]:
+# In[9]:
 
 io_abusers[:4].plot.pie(autopct='%.1f', fontsize=14, figsize=(6, 6), legend=True)
 
 
-# In[43]:
+# In[10]:
 
 memory_abusers[:4].plot.pie(autopct='%.1f', fontsize=14, figsize=(6, 6), legend=True)
 
